@@ -151,8 +151,8 @@ header {
 
 .nav-links li {
     display: inline;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 25px;
+    padding-right: 0px;
 }
 
 .nav-links li a:link, .nav-links li a:visited {
@@ -383,7 +383,9 @@ header {
 /*----------------*/
 
 .section-products {
-    background-color: #1A1A1A;
+    background-color: #070A0E;
+    background-image: url('../img/banner-bg.png');
+    background-size: cover;
 }
 
 .product-main {
@@ -398,7 +400,7 @@ header {
 }
 
 .products {
-    padding: 13% 10% 6% 10%;
+    /*padding: 13% 10% 6% 10%;*/
     display: flex;
     overflow-x: auto;
 }
@@ -417,7 +419,7 @@ header {
 }
 
 .product-image {
-    opacity: 1;
+    opacity: 0;
     transition: .5s ease;
     display: block;
     height: auto;
@@ -425,19 +427,22 @@ header {
 
 .product-hover-text {
     background-color: #d44747;
-    padding: 38% 5%;
+    padding: 10% 5%;
     color: #fdfdfd;
     position: absolute;
     top: 0%;
     left: 0%;
     overflow: hidden;
+    height: 100%;
+    border-radius: 15px;
+        min-width: 100%;
 }
 
 .product-text {
-    opacity: 0;
+    opacity: 1;
 }
 
-.product-text-image:hover img {
+.product-text-image img {
     opacity: 0;
 }
 
@@ -552,7 +557,8 @@ header {
 
 .try-products {
     text-align: center;
-    margin-top: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%
 }
 
 .try-products p {
@@ -795,4 +801,68 @@ footer {
 
 .fleethuman::first-line {
     line-height: 100%;
+}
+
+
+
+.section-products .row{
+    display: flex;
+    justify-content: space-around;
+    margin: 3em 0
+}
+.section-products {
+    padding: 3em 0
+}
+.section-products h1{
+    text-align: center;
+    color: #fff
+}
+
+.product-hover-text h4{
+    font-size: 18px
+}
+.product-hover-text div{
+    font-size: 16px;
+    margin: 8px 0;
+    line-height: 22px
+}
+.section_rowheading{
+    color: #fff !important;
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    min-width: 15vw
+}
+.client-section{
+    padding: 5em 0 0 0
+}
+.client-section .box-logo{
+    color: #010000
+}
+.client-section h3{
+    color: #010000
+}
+.client-section h2{
+    color: #010000;
+    text-align: center;
+}
+.client-section .box p{
+    color: #010000
+}
+
+.client-section .client-app-image{
+    padding-top: 5em
+}
+.try-products p{
+    max-width: 70%;
+    line-height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-column_0op{
+    opacity: 0
 }
