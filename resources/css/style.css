@@ -94,7 +94,7 @@ h5::first-line {
 p {
     color: #010000;
     font-weight: 500;
-    font-size: 110%;
+    font-size: 100%;
 }
 
 
@@ -272,6 +272,9 @@ header {
     font-size: 250%;
     color: #fdfdfd;
     margin-bottom: 15%;
+    text-align: center;
+    display: inherit !important;
+
 }
 
 .box p {
@@ -343,13 +346,13 @@ header {
     opacity: 0;
 }
 
-.service-text-image:hover img {
+/*.service-text-image:hover img {
     opacity: 0;
 }
 
 .service-text-image:hover .section-text {
     opacity: 1;
-}
+}*/
 
 .services-para {
     width: 70%;
@@ -593,29 +596,23 @@ header {
 
 footer {
     background-color: #1A1A1A;
-    padding: 2% 5% 8% 5%;
+    padding: 15px 10px;
+    text-align: center;
 }
 
 .footer-column {
-    color: #fdfdfd;
-    font-size: 70%;
-    text-transform: uppercase;
+    color: #fff;
 }
 
 .comp-name {
-    font-size: 130%;
-    text-transform: none;
-    font-weight: 900;
     letter-spacing: 1px;
 }
 
-.footer-column::first-line {
-    font-weight: 800;
-}
+
 
 .footer-links {
     text-decoration: none;
-    color: #fdfdfd;
+    color: #fff;
 }
 
 .footer-column div {
