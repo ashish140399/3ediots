@@ -1,0 +1,75 @@
+@media (max-width: 375px) {
+    /* setting column width to 100% */
+    .col {
+        width: 100%;
+    }
+
+    /* Changes for Nav bar */
+    .brand-logo {
+        line-height: 75px;
+        margin-left: 5%;
+    }
+    .Connect-Slidebar {
+        display: initial;
+    }
+    .connect-button {
+        display: none;
+    }
+    .nav-bar {
+        display: unset;
+        justify-content: unset;
+        align-items: unset;
+    }
+    .nav-links {
+        display: unset;
+        justify-content: unset;
+        align-items: unset;
+    }
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #444444;
+        top: 12vh;
+        left: -100%;
+        transition: all .5s;
+    }
+    .nav-links li {
+        display: block;
+        line-height: 8vh;
+        text-align: center;
+    }
+    .nav-links li a:link, .nav-links li a:visited {
+        text-transform: uppercase;
+        font-size: 90%;
+        font-weight: 700;
+        opacity: 1;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+
+    /* Hero Text and Image */
+    
+
+    #hti {display:  flex; flex-direction: column;}
+    #hi {order: 1;}
+    #ht {order: 2;}
+
+    .service-border {
+        border: none;
+    }
+
+    .client-header h5 {
+        font-size: 100%;
+    }
+
+    /* width for all images */
+    .image{
+        width: 100%;
+    }
+
+}
