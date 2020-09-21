@@ -43,9 +43,17 @@
 
 		<div class="row hero-text-image " id="hti" >
 			<div class="col span-1-of-2 hero-text-box wow fadeInLeft" id="ht" data-wow-duration="1s" data-wow-delay="0.20s">
-				<h1>We strive for passion <br> and excellence.</h1>
+				<!-- <h1>We strive for passion <br> and excellence.</h1> -->
+				<h1>
+					Explore, <br>
+					Enlighten, <br>
+					Excellence
+				</h1>
 				<p class="hero-text-para">
-					Follow Your heart.
+					<!-- <div
+                        class="txt-rotate" style="margin-left: 10px;"
+                        data-period="100"
+                        data-rotate='[ "Explore", "Enlighten", "hex.credit"]'></div> -->
 				</p>
 				<!-- <form action="" class="email-form"></form>
 				<input class="Hor-email-box" type="email" name="" value="" placeholder="Enter your email">
@@ -54,7 +62,7 @@
 				</form> -->
 			</div>
 			<div class="col span-1-of-2 hero-image image wow fadeInRight" id="hi">
-				<img src="resources/img/banner-one.png" alt="Streamline your business" class="image">
+				<img src="resources/img/clientapps2.png" alt="Streamline your business" class="image">
 			</div>
 		</div>
 	</header>
@@ -172,7 +180,7 @@
 
 		<div class="row products">
 			<div class="col-sm-4 wow fadeInLeft">
-				<div class="section_rowheading products-text-image">Contract <br> Jobs <i class="fas fa-arrow-right"></i></div>		
+				<div class="section_rowheading products-text-image">Jobs <i class="fas fa-arrow-right"></i></div>		
 			</div>
 			<div class="col-sm-4  wow fadeInRight">
 				<div class="products-text-image">
@@ -433,7 +441,7 @@
 				<i class="fas fa-medal box-logo"></i>
 				<h3>Appreciation (cash awards and recognition), No beaurcracy</h3>
 				<p>
-					With every milestone achieved, you will be appreciated with extra cash awards as per your performance. Better your perform, bigger is the award.
+					With every milestone achieved, you will be appreciated with extra cash awards as per your performance. Better your performance, bigger is the award.
 				</p>
 			</div>
 			<div class="col span-1-of-3 box">
@@ -451,12 +459,12 @@
 				</p>
 			</div>
 		</div>
-		<img src="resources/img/clientapps.jpg" alt="Client Apps" class="client-app-image image">
+		<!-- <img src="resources/img/clientapps.jpg" alt="Client Apps" class="client-app-image image"> -->
 		<div class="row">
 			<div class="try-products">
 				<h1>About Us</h1>
 				<p>
-					We,three musketeers, from IIT-K, inspired from the movie 3idiots decidedto start our own venture last January. We all have worked in the ITindustry for a couple of years and learnt that there is a gap betweenthe way we do our work and deliver a quality product to the client.Our vision is to deliver world class products (mobileapp/website/any software) at a competitive cost.
+					We, three musketeers, from IIT-K, inspired from the movie 3idiots decided to start our own venture last January. We all have worked in the IT industry for a couple of years and learnt that there is a gap between the way we do our work and deliver a quality product to the client. Our vision is to deliver world class products ( mobileapp / website / any software ) at a competitive cost.
 
 				</p>
 			</div>
@@ -473,7 +481,7 @@
 	<footer>
 		<div class="row">
 			<div class="footer-column comp-name">
-				3Ediots | contact@3ediots.com
+				3Ediots © 2020 | contact@3ediots.com
 			</div>
 			<!-- <div class="col span-1-of-5 footer-column  footer-column_0op">
 				<div class="first-link"><a href="#" class="footer-links">softwares</a></div>
@@ -546,6 +554,64 @@
                 scrollTop: $(".client-section").offset().top
             }, 1000);
         });
+    </script>
+    <script>
+        var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<strong class="wrap">'+this.txt+'</strong>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #1E266D }";
+  document.body.appendChild(css);
+};
     </script>
 </body>
 
